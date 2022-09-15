@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/5a44f94317.js" crossorigin="anonymous"></script>
+    <title>Dom-start</title>
+    <style>
+      body {
+        padding: 100px;
+      }
+
+      div {
+        border: 2px solid black;
+        padding: 20px;
+        margin: 20px;
+      }
+
+      .div1 h1 {
+        background-color: coral;
+      }
+
+      .div3 {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .div4 i {
+        display: block;
+        position: relative;
+        margin-bottom: 20px;
+        color: red;
+        font-size: 30px;
+        margin-left: 600px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="div1">
+        <h1 class="text1">Text : fontSize</h1>
+        <h1 class="text2">Text : color</h1>
+        <h1 class="text3">Text width</h1>
+        <h1 class="text4">Text height</h1>
+        <h1 class="text5">Text</h1>
+      </div>
+
+      <div class="div2">
+        <h1 class="div2-element">html</h1>
+        <h1 class="div2-element">js</h1>
+        <h1 class="div2-element">css</h1>
+        <h1 class="div2-element">php</h1>
+        <input type="button" value="click" onclick="a();" />
+      </div>
+
+      <div class="div3">
+        <a href="#">html</a>
+        <a href="#">css</a>
+        <a href="#">js</a>
+        <a href="#">php</a>
+        <input
+          type="button"
+          id="btn-length"
+          onclick="lenght();"
+          value="link count :"
+        />
+      </div>
+
+      <div class="div4">
+        <i class="fa-solid fa-car-side" id="car"></i>
+        <input type="button" value="right-->" class="right" onclick="right();">
+        <input type="button" value="<--left" class="left" onclick="left();">
+         
+      </div>
+    </main>
+
+    <script>
+      //  Div1---------------------------------
+      document.querySelector(".text1").style.fontSize = "60px";
+      document.querySelector(".text2").style.color = "red";
+      document.querySelector(".text3").style.width = "200px";
+      document.querySelector(".text4").style.height = "20px";
+      document.querySelector(".text5").innerHTML =
+        "Text : İnnerHTML change text";
+
+      // Div2--------------------------------------
+
+      function a() {
+        let language = document.getElementsByClassName("div2-element");
+        alert(language[1].innerHTML);
+      }
+
+      //çalışmadı :
+      //  let sms=" ";
+      //  for (let i = 0; i < language.lenght; i++)
+      //  {
+      //     sms+= language[i].innerHTML+"\n";
+      //  }
+      //  alert(sms);
+
+      // Div3---------------------------------------------
+
+      function lenght() {
+        document.getElementById("btn-length").value = document.links.length;
+      }
+
+
+
+    //   Div4-----------------------------------------------
+
+
+
+     
+     function right() {
+        let carright = document.getElementById('car');
+        
+         carright.style.left="300px"
+     }
+
+     function left () {
+      let carright = document.getElementById('car');
+        carright.style.left="-300px"
+     }
+
+    </script>
+  </body>
+</html>
